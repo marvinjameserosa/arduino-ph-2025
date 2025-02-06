@@ -2,8 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "Morganite";
+	src: url("/fonts/morganite/Morganite-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Morganite";
+	src: url("/fonts/morganite/Morganite-MediumItalic.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Morganite";
+	src: url("/fonts/morganite/Morganite-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Morganite";
+	src: url("/fonts/morganite/Morganite-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
 @layer base {
 	body {
-		@apply text-neutral-primary bg-neutral-primary font-inter;
+		@apply bg-black text-base text-white-100 font-montserrat;
 	}
 }
