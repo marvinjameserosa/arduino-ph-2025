@@ -34,6 +34,7 @@ export default {
 					"linear-gradient(180deg, #D6EAEA 24%, #1A1A1C 100%)",
 			},
 			fontSize: {
+				xs: ["11.1px", { letterSpacing: "0.005em" }],
 				sm: ["13.3px", { letterSpacing: "0.005em" }],
 				base: ["16px", { letterSpacing: "0.005em" }],
 				xl: ["19.2px", { letterSpacing: "0.005em" }],

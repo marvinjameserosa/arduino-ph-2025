@@ -33,4 +33,17 @@
 	body {
 		@apply bg-black text-base text-white-100 font-montserrat;
 	}
+
+	h2 { // Section Headings
+		@apply font-morganite text-5xl;
+	}
+
+	h3 {
+		@apply font-morganite text-4xl;
+	}
+
+	h4 {
+		@apply font-morganite text-3xl;
+	}
+
 }
