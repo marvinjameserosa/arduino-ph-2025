@@ -17,8 +17,8 @@ export default {
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
-		colors: globalColors,
 		extend: {
+			colors: globalColors,
 			fontFamily: {
 				montserrat: ["Montserrat", "sans-serif"],
 				morganite: ["Morganite", "sans-serif"],
