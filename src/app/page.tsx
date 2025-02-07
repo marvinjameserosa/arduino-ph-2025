@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/Button";
-import { LampContainer } from "@/components/ui/Lamp";
+import { Button } from "@/components/ui/button";
+import { LampContainer } from "@/components/ui/lamp";
 
 export default function Home() {
 	return (
