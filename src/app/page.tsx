@@ -1,7 +1,8 @@
 export default function Home() {
 	return (
 		<div>
-			<h1 className="bg">Hello World</h1>
+			<h1>Hello World</h1>
+			<div className="h-screen py-20 w-full"></div>
 		</div>
 	);
 }

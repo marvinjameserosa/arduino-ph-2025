@@ -2,8 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "Morganite";
+	src: url("/fonts/morganite/Morganite-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Morganite";
+	src: url("/fonts/morganite/Morganite-MediumItalic.ttf") format("truetype");
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Morganite";
+	src: url("/fonts/morganite/Morganite-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Morganite";
+	src: url("/fonts/morganite/Morganite-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
 @layer base {
 	body {
-		@apply text-neutral-primary bg-neutral-primary font-inter;
+		@apply bg-black text-base text-white-100 font-montserrat;
+	}
+	/* Section Headings */
+	h2 {
+		@apply font-morganite text-5xl font-bold;
+	}
+
+	h3 {
+		@apply font-morganite text-4xl font-bold;
+	}
+
+	h4 {
+		@apply font-morganite text-3xl font-medium;
 	}
 }
