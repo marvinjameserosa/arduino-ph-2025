@@ -21,6 +21,12 @@ const Location = () => {
 					loading="lazy"
 					referrerPolicy="no-referrer-when-downgrade"
 				></iframe>
+				<noscript>
+					<p>
+						Google Maps is not available. Please enable JavaScript to view the
+						map.
+					</p>
+				</noscript>
 			</div>
 		</div>
 	);
