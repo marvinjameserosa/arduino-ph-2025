@@ -13,10 +13,10 @@ This is the **Arduino Day PH 2025** website repository project for the Arduino c
     - [Prerequisites](#prerequisites)
   - [📁 Project Structure](#-project-structure)
   - [Issue \& Project Workflow](#issue--project-workflow)
-    - [1. Find an Issue](#1-find-an-issue)
-    - [2. Create a Branch](#2-create-a-branch)
-    - [3. Submit a Pull Request (PR)](#3-submit-a-pull-request-pr)
-    - [4. Code Review \& Merge](#4-code-review--merge)
+      - [1. Find an Issue](#1-find-an-issue)
+      - [2. Create a Branch](#2-create-a-branch)
+      - [3. Submit a Pull Request (PR)](#3-submit-a-pull-request-pr)
+      - [4. Code Review \& Merge](#4-code-review--merge)
   - [Branching \& Git Workflow](#branching--git-workflow)
     - [Branch Naming Convention](#branch-naming-convention)
       - [1. Switch to develop branch](#1-switch-to-develop-branch)
@@ -201,7 +201,7 @@ git push origin feature/ISSUE-ID-feature-name
 ### Commit Message Format
 
 ```
-<type>(<scope>): <description> (Closes #ISSUE-ID)
+<type>(<scope>): <description>
 ```
 
 ### Allowed Commit Types
@@ -222,9 +222,9 @@ This project follows [Conventional Commits](https://www.conventionalcommits.org/
 #### Examples
 
 ```
-git commit -m "feat(auth): add user authentication with JWT (Closes #123)"
-git commit -m "fix(navbar): resolve mobile responsiveness issue (Closes #234)"
-git commit -m "docs(readme): update contribution guide (Closes #345)"
+git commit -m "feat(auth): add user authentication with JWT "
+git commit -m "fix(navbar): resolve mobile responsiveness issue "
+git commit -m "docs(readme): update contribution guide "
 ```
 
 ---
