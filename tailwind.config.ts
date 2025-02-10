@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from '@tailwindcss/typography';
 const globalColors = {
 	primary: "#008080",
 	secondary: "#EE7402",
@@ -8,6 +9,7 @@ const globalColors = {
 		100: "#FFFFFF",
 	},
 	black: "#131118",
+	price: "#F2BC51"
 };
 
 export default {
@@ -42,6 +44,9 @@ export default {
 				"4xl": ["55.23px", { letterSpacing: "0.05em" }],
 				"5xl": ["73.96px", { letterSpacing: "0.05em" }],
 			},
+			textShadow: {
+				'glow': '0 0 25px #F8F7FC',
+			},
 
 			animation: {
 				shimmer: "shimmer 2s linear infinite",
@@ -66,5 +71,17 @@ export default {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		typography,
+		function ({ matchUtilities, theme }) {
+			matchUtilities(
+			{
+				'text-shadow': (value) => ({
+				textShadow: value,
+				}),
+			},
+			{ values: theme('textShadow') }
+			)
+		},
+	],
 } satisfies Config;

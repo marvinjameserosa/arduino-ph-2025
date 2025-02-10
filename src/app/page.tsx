@@ -1,3 +1,7 @@
+import Merch from "@/components/features/Merch";
+
 export default function Home() {
-	return <div></div>;
+	return <div>
+		<Merch />
+	</div>;
 }
