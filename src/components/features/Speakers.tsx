@@ -8,7 +8,7 @@ const Speakers = () => {
 	return (
 		<div className="relative">
 			<LampContainer>
-				<h2>Speakers</h2>
+				<h2>Featured Speakers</h2>
 			</LampContainer>
 			<InfiniteMovingCards
 				items={speakers}
