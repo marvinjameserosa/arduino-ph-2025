@@ -2,7 +2,7 @@
 import React from "react";
 import { LampContainer } from "../ui/lamp";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
-import speakers from "@/data/index";
+import { speakers } from "@/data/index";
 
 const Speakers = () => {
 	return (
