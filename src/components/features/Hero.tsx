@@ -26,11 +26,11 @@ export const Hero = () => {
     ((mousePosition.y - window.innerHeight / 2) / window.innerHeight) * -60;
 
   return (
-    <div className="flex flex-col items-start justify-center px-8 py-8">
+    <div className="flex flex-col items-start justify-center container">
       {/* Header Logo */}
       <div className="flex items-center justify-center w-full">
-        <div className="flex items-center justify-center relative min-h-[312px] w-full overflow-hidden">
-          <div className="absolute inset-0 z-[-1]">
+        <div className="flex items-center justify-center relative min-h-80 w-full  overflow-hidden">
+          <div className="absolute inset-0 z-[-1] rounded-sm">
             <Image
               src={Cover}
               alt="Cover Image"
@@ -54,12 +54,14 @@ export const Hero = () => {
 
       {/* Header Texts */}
       <div className="uppercase flex flex-col">
-        <h1 className="text-[126px]">
+        <h1 className="text-16 sm:text-32 flex gap-2 flex-wrap">
           <span className="font-bold text-[#00878F]">Arduino</span>{" "}
           <span className="font-bold text-[#E47128]">Day</span>{" "}
           <span className="text-[#00878F]">2025</span>
         </h1>
-        <h1 className="font-bold text-[96px] text-accent -mt-8">Philippines</h1>
+        <h1 className="font-bold text-12 sm:text-24 text-accent -mt-8">
+          Philippines
+        </h1>
       </div>
     </div>
   );
