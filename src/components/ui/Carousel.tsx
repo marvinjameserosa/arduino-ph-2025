@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { CircleChevronLeft, CircleChevronRight } from 'lucide-react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 interface CarouselItem {
-  src: string;
+  src: StaticImageData;
   alt: string;
 }
 
@@ -49,7 +49,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
   const visibleItems = getVisibleItems();
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4 py-8 border-2 border-white-50">
+    <div className="relative w-full max-w-7xl mx-auto px-4 py-8">
       <div className="relative h-[300px] md:h-[450px]">
         <div className='z-0'>
           <div className="orange-blur h-[200px] w-[170px] absolute rounded-full top-4 left-2 md:h-[260px] md:w-[230px] md:left-[33%]"></div>
@@ -71,7 +71,10 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
                 <Image
                     src={item.src}
                     alt={item.alt}
+                    width={500}
+                    height={500}
                     className="w-[250px] h-[250px] md:w-[500px] md:h-[500px] object-contain"
+                    priority
                 />
               </div>
             );

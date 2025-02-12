@@ -1,13 +1,21 @@
 'use client'
 import { useState } from "react"
+import { StaticImageData } from "next/image"
 import blue_shirt from "../../../public/images/blue_shirt.svg"
 import light_blue_shirt from "../../../public/images/light_blue_shirt.svg"
 import white_shirt from "../../../public/images/white_shirt.svg"
 import { Button } from "../ui/button"
 import { Carousel } from "../ui/Carousel"
 
+interface Shirt {
+    src: StaticImageData;
+    alt: string;
+    title: string;
+    price: string;
+}
+
 export default function Merch() {
-    const shirts = [
+    const shirts: Shirt[] = [
         {
             src: blue_shirt,
             alt: "blue_shirt",
