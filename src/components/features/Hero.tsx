@@ -26,7 +26,7 @@ export const Hero = () => {
     ((mousePosition.y - window.innerHeight / 2) / window.innerHeight) * -60;
 
   return (
-    <div className="flex flex-col items-start justify-center container">
+    <div className="flex flex-col items-start justify-center gap-4 container">
       {/* Header Logo */}
       <div className="flex items-center justify-center w-full">
         <div className="flex items-center justify-center relative min-h-80 w-full  overflow-hidden">
@@ -47,19 +47,19 @@ export const Hero = () => {
               pointerEvents: "none",
             }}
           >
-            <Image src={Logo} alt="Logo" width={300} />
+            <Image src={Logo} alt="Logo" className="w-60 md:w-80" />
           </div>
         </div>
       </div>
 
       {/* Header Texts */}
-      <div className="uppercase flex flex-col">
-        <h1 className="text-[65px] sm:text-[126px] flex gap-2 flex-wrap">
+      <div className="uppercase flex flex-col items-start  leading-none">
+        <h1 className="text-[65px] sm:text-[126px] flex gap-x-4 flex-wrap">
           <span className="font-bold text-[#00878F]">Arduino</span>{" "}
           <span className="font-bold text-[#E47128]">Day</span>{" "}
           <span className="text-[#00878F]">2025</span>
         </h1>
-        <h1 className="font-bold text-[50px] sm:text-[96px] text-accent -mt-8">
+        <h1 className="font-bold text-[50px] sm:text-[96px] text-accent">
           Philippines
         </h1>
       </div>
