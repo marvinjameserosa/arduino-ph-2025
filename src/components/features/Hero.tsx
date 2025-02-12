@@ -54,12 +54,12 @@ export const Hero = () => {
 
       {/* Header Texts */}
       <div className="uppercase flex flex-col">
-        <h1 className="text-16 sm:text-32 flex gap-2 flex-wrap">
+        <h1 className="text-[65px] sm:text-[126px] flex gap-2 flex-wrap">
           <span className="font-bold text-[#00878F]">Arduino</span>{" "}
           <span className="font-bold text-[#E47128]">Day</span>{" "}
           <span className="text-[#00878F]">2025</span>
         </h1>
-        <h1 className="font-bold text-12 sm:text-24 text-accent -mt-8">
+        <h1 className="font-bold text-[50px] sm:text-[96px] text-accent -mt-8">
           Philippines
         </h1>
       </div>
