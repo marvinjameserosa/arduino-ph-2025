@@ -53,8 +53,6 @@
 
 .blue-blur {
 	position: absolute;
-	width: 280.353px;
-	height: 298.095px;
 	transform: rotate(41.861deg);
 	flex-shrink: 0;
 	background: linear-gradient(180deg, #16A2AF 0%, #171425 100%);
@@ -65,8 +63,6 @@
 
 .yellow-blur {
 	position: absolute;
-	width: 280.353px;
-	height: 298.095px;
 	transform: rotate(41.861deg);
 	flex-shrink: 0;
 	background: linear-gradient(110deg, rgba(255, 255, 255, 0.75) -25.72%, #F2BC51 33.41%, rgba(23, 20, 37, 0.75) 124.59%);
@@ -77,8 +73,6 @@
 
 .orange-blur {
 	position: absolute;
-	width: 231.81px;
-	height: 258.272px;
 	transform: rotate(-156.151deg);
 	flex-shrink: 0;
 	background: linear-gradient(5deg, #EE7402 3.73%, rgba(136, 66, 1, 0.50) 63.57%);

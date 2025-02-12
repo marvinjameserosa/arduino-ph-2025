@@ -1,27 +1,29 @@
 'use client'
 import { useState } from "react"
-import shirt from "../../../public/images/shirt.svg"
+import blue_shirt from "../../../public/images/blue_shirt.svg"
+import light_blue_shirt from "../../../public/images/light_blue_shirt.svg"
+import white_shirt from "../../../public/images/white_shirt.svg"
 import { Button } from "../ui/button"
 import { Carousel } from "../ui/Carousel"
 
 export default function Merch() {
     const shirts = [
         {
-            src: shirt,
+            src: blue_shirt,
             alt: "blue_shirt",
             title: "BLUE Arduino T-Shirt",
             price: "900.00"
         },
         {
-            src: shirt,
+            src: white_shirt,
             alt: "white_shirt",
             title: "WHITE Arduino T-Shirt",
             price: "900.00"
         },
         {
-            src: shirt,
-            alt: "red_shirt",
-            title: "RED Arduino T-Shirt",
+            src: light_blue_shirt,
+            alt: "light_blue_shirt",
+            title: "Light Blue Arduino T-Shirt",
             price: "900.00"
         }
     ];
@@ -29,17 +31,12 @@ export default function Merch() {
     const [currentShirt, setCurrentShirt] = useState(0);
 
     return (
-        <section className="h-screen">
+        <section className="h-screen w-full px-4 md:px-0">
             <div className="flex mt-6 flex-col text-center gap-1">
                 <h2>Merch</h2>
-                <p className="text-xl">Gear Up, Innovate, and Represent! Get Your Exclusive Arduino Merch Today!</p>
+                <p className="text-[15px] md:text-xl mx-[20px] md:mx-0">Gear Up, Innovate, and Represent! Get Your Exclusive Arduino Merch Today!</p>
             </div>
-            <div className="flex justify-center relative mt-4">
-                <div className="absolute inset-0 z-0">
-                    <div className="orange-blur absolute rounded-full top-9 left-[510px]"></div>
-                    <div className="yellow-blur absolute rounded-full bottom-64 left-[620px]"></div>
-                    <div className="blue-blur absolute rounded-full bottom-32 right-[550px]"></div>
-                </div>
+            <div className="flex justify-center mt-4">
                 <div className="z-10 w-full">
                     <Carousel 
                         items={shirts.map(shirt => ({ src: shirt.src, alt: shirt.alt }))} 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { CircleChevronLeft, CircleChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
 interface CarouselItem {
@@ -49,8 +49,13 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
   const visibleItems = getVisibleItems();
 
   return (
-    <div className="relative w-full mx-auto px-4 py-8 ">
-      <div className="relative h-[450px]">
+    <div className="relative w-full max-w-7xl mx-auto px-4 py-8 border-2 border-white-50">
+      <div className="relative h-[300px] md:h-[450px]">
+        <div className='z-0'>
+          <div className="orange-blur h-[200px] w-[170px] absolute rounded-full top-4 left-2 md:h-[260px] md:w-[230px] md:left-[33%]"></div>
+          <div className='yellow-blur h-[200px] w-[170px] absolute rounded-full top-14 right-12 md:h-[260px] md:w-[230px] md:right-[39%] md:top-24'></div>
+          <div className='blue-blur h-[200px] w-[170px] absolute rounded-full -bottom-4 right-12 md:h-[260px] md:w-[230px] md:right-[35%] md:-bottom-8'></div>
+        </div>
         <div className="absolute inset-0 flex items-center justify-center">
           {visibleItems.map((itemIndex, position) => {
             const item = items[itemIndex];
@@ -58,15 +63,15 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
               <div
                 key={itemIndex}
                 className={`absolute transition-all duration-300 ease-in-out
-                  md:block
-                  ${position === 0 ? 'hidden md:-translate-x-full md:opacity-50 md:scale-75' : ''}
+                  ${position === 0 ? 'md:-translate-x-[75%] md:scale-75 hidden md:block' : ''}
                   ${position === 1 ? 'z-20 scale-100' : ''}
-                  ${position === 2 ? 'hidden md:block md:translate-x-full md:opacity-50 md:scale-75' : ''}
+                  ${position === 2 ? 'md:translate-x-[75%]  md:scale-75 hidden md:block' : ''}
                 `}
               >
                 <Image
                     src={item.src}
                     alt={item.alt}
+                    className="w-[250px] h-[250px] md:w-[500px] md:h-[500px] object-contain"
                 />
               </div>
             );
@@ -77,17 +82,17 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
       <div className="absolute inset-0 flex items-center justify-between">
         <button
           onClick={handlePrev}
-          className="p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors ml-4"
+          className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors ml-0 md:ml-4"
           disabled={isAnimating}
         >
-          <ChevronLeft className="w-6 h-6" />
+          <CircleChevronLeft className="w-8 h-8 md:w-12 md:h-12" />
         </button>
         <button
           onClick={handleNext}
-          className="p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors mr-4"
+          className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors mr-0 md:mr-4"
           disabled={isAnimating}
         >
-          <ChevronRight className="w-6 h-6" />
+          <CircleChevronRight className="w-8 h-8 md:w-12 md:h-12" />
         </button>
       </div>
     </div>
