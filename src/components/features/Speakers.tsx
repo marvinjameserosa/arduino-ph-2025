@@ -6,7 +6,7 @@ import speakers from "@/data/index";
 
 const Speakers = () => {
 	return (
-		<div className="relative">
+		<section id="speakers" className="relative">
 			<LampContainer>
 				<h2>Featured Speakers</h2>
 			</LampContainer>
@@ -16,7 +16,7 @@ const Speakers = () => {
 				speed="normal"
 				className="absolute top-2/4 mt-24"
 			/>
-		</div>
+		</section>
 	);
 };
 
