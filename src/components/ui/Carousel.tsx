@@ -15,19 +15,14 @@ interface CarouselProps {
 export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-
-  const getVisibleItems = () => {
-    const itemCount = items.length;
-    const prev = (currentIndex - 1 + itemCount) % itemCount;
-    const next = (currentIndex + 1) % itemCount;
-    return [prev, currentIndex, next];
-  };
+  const [positions, setPositions] = useState([0, 1, 2]);
 
   const handleNext = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     const nextIndex = (currentIndex + 1) % items.length;
     setCurrentIndex(nextIndex);
+    setPositions(prev => [(prev[1]), (prev[2]), (prev[0])]);
     onSlideChange?.(nextIndex);
   };
 
@@ -36,6 +31,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
     setIsAnimating(true);
     const prevIndex = (currentIndex - 1 + items.length) % items.length;
     setCurrentIndex(prevIndex);
+    setPositions(prev => [(prev[2]), (prev[0]), (prev[1])]);
     onSlideChange?.(prevIndex);
   };
 
@@ -46,8 +42,6 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
     return () => clearTimeout(timer);
   }, [currentIndex]);
 
-  const visibleItems = getVisibleItems();
-
   return (
     <div className="relative w-full max-w-7xl mx-auto px-4 py-8">
       <div className="relative h-[300px] md:h-[450px]">
@@ -57,12 +51,12 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
           <div className='blue-blur h-[200px] w-[170px] absolute rounded-full -bottom-4 right-12 md:h-[260px] md:w-[230px] md:right-[35%] md:-bottom-8'></div>
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          {visibleItems.map((itemIndex, position) => {
-            const item = items[itemIndex];
+          {items.map((item, index) => {
+            const position = positions[index];
             return (
               <div
-                key={itemIndex}
-                className={`absolute transition-all duration-300 ease-in-out
+                key={index}
+                className={`absolute transition-all duration-600 ease-in-out
                   ${position === 0 ? 'md:-translate-x-[75%] md:scale-75 hidden md:block' : ''}
                   ${position === 1 ? 'z-20 scale-100' : ''}
                   ${position === 2 ? 'md:translate-x-[75%]  md:scale-75 hidden md:block' : ''}

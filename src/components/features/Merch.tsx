@@ -17,15 +17,15 @@ interface Shirt {
 export default function Merch() {
     const shirts: Shirt[] = [
         {
-            src: blue_shirt,
-            alt: "blue_shirt",
-            title: "BLUE Arduino T-Shirt",
-            price: "900.00"
-        },
-        {
             src: white_shirt,
             alt: "white_shirt",
             title: "WHITE Arduino T-Shirt",
+            price: "900.00"
+        },
+        {
+            src: blue_shirt,
+            alt: "blue_shirt",
+            title: "BLUE Arduino T-Shirt",
             price: "900.00"
         },
         {
