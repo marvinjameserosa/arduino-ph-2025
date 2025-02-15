@@ -49,4 +49,27 @@
 	.container {
 		@apply px-[20px] md:max-w-md mx-auto;
 	}
+
+	.border-gradient-primary {
+		background:
+				linear-gradient(to bottom, #008080, #EE7402) border-box;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		mask:
+				linear-gradient(#fff 0 0) padding-box,
+				linear-gradient(#fff 0 0) border-box;
+		mask-composite: exclude;
+	}
+
+	.border-gradient-secondary {
+		background:
+				linear-gradient(to bottom, #EE7402, #008080) border-box;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		mask:
+				linear-gradient(#fff 0 0) padding-box,
+				linear-gradient(#fff 0 0) border-box;
+		mask-composite: exclude;
+	}
+
 }
