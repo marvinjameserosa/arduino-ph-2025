@@ -1,5 +1,10 @@
+import { div } from "motion/react-client";
 import React from "react";
 
 export const Hero = () => {
-	return <div>Hero</div>;
+	return (
+		<div className="container">
+			<p>test</p>
+		</div>
+	)
 };
