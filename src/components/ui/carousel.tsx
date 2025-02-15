@@ -15,14 +15,24 @@ interface CarouselProps {
 export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [positions, setPositions] = useState([0, 1, 2]);
+
+  const getItemPosition = (index: number) => {
+    if (items.length <= 1) return 1;
+    
+    const prev = (currentIndex - 1 + items.length) % items.length;
+    const next = (currentIndex + 1) % items.length;
+
+    if (index === prev) return 0;
+    if (index === currentIndex) return 1;
+    if (index === next) return 2;
+    return -1; 
+  };
 
   const handleNext = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     const nextIndex = (currentIndex + 1) % items.length;
     setCurrentIndex(nextIndex);
-    setPositions(prev => [(prev[1]), (prev[2]), (prev[0])]);
     onSlideChange?.(nextIndex);
   };
 
@@ -31,7 +41,6 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
     setIsAnimating(true);
     const prevIndex = (currentIndex - 1 + items.length) % items.length;
     setCurrentIndex(prevIndex);
-    setPositions(prev => [(prev[2]), (prev[0]), (prev[1])]);
     onSlideChange?.(prevIndex);
   };
 
@@ -52,7 +61,9 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
           {items.map((item, index) => {
-            const position = positions[index];
+            const position = getItemPosition(index);
+            if (position === -1) return null;
+
             return (
               <div
                 key={index}
@@ -76,22 +87,24 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
         </div>
       </div>
 
-      <div className="absolute inset-0 flex items-center justify-between">
-        <button
-          onClick={handlePrev}
-          className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors ml-0 md:ml-4"
-          disabled={isAnimating}
-        >
-          <CircleChevronLeft className="w-8 h-8 md:w-12 md:h-12" />
-        </button>
-        <button
-          onClick={handleNext}
-          className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors mr-0 md:mr-4"
-          disabled={isAnimating}
-        >
-          <CircleChevronRight className="w-8 h-8 md:w-12 md:h-12" />
-        </button>
-      </div>
+      {items.length > 1 && (
+        <div className="absolute inset-0 flex items-center justify-between">
+          <button
+            onClick={handlePrev}
+            className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors ml-0 md:ml-4"
+            disabled={isAnimating}
+          >
+            <CircleChevronLeft className="w-8 h-8 md:w-12 md:h-12" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors mr-0 md:mr-4"
+            disabled={isAnimating}
+          >
+            <CircleChevronRight className="w-8 h-8 md:w-12 md:h-12" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
