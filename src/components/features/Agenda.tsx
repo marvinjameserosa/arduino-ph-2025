@@ -37,8 +37,7 @@ export default function Agenda() {
     }));
 
     return (
-        <main className="container min-h-screen overflow-x-hidden">
-
+        <main className="container min-h-screen overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <BackgroundGradients/>
             </div>
