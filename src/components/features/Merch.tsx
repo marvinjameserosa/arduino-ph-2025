@@ -5,7 +5,7 @@ import blue_shirt from "../../../public/images/blue_shirt.svg"
 import light_blue_shirt from "../../../public/images/light_blue_shirt.svg"
 import white_shirt from "../../../public/images/white_shirt.svg"
 import { Button } from "../ui/button"
-import { Carousel } from "../ui/Carousel"
+import { Carousel } from "../ui/carousel"
 
 interface Shirt {
     src: StaticImageData;
@@ -39,7 +39,7 @@ export default function Merch() {
     const [currentShirt, setCurrentShirt] = useState(0);
 
     return (
-        <section className="h-screen w-full px-4 md:px-0">
+        <section className="h-screen w-full px-4 md:px-0 mt-12">
             <div className="flex mt-6 flex-col text-center gap-1">
                 <h2>Merch</h2>
                 <p className="text-[15px] md:text-xl mx-[20px] md:mx-0">Gear Up, Innovate, and Represent! Get Your Exclusive Arduino Merch Today!</p>
