@@ -2,11 +2,11 @@
 import React from "react";
 import { LampContainer } from "../ui/lamp";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
-import speakers from "@/data/index";
+import { speakers } from "@/data/index";
 
 const Speakers = () => {
 	return (
-		<section id="speakers" className="relative">
+		<section id="speakers" className="relative container">
 			<LampContainer>
 				<h2>Featured Speakers</h2>
 			</LampContainer>
