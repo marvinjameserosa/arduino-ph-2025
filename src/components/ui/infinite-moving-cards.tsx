@@ -11,9 +11,11 @@ export const InfiniteMovingCards = ({
 	className,
 }: {
 	items: {
-		quote: string;
+		id: number;
 		name: string;
-		title: string;
+		position: string;
+		company: string;
+		image: string;
 	}[];
 	direction?: "left" | "right";
 	speed?: "fast" | "normal" | "slow";
@@ -87,32 +89,26 @@ export const InfiniteMovingCards = ({
 			>
 				{items.map((item) => (
 					<li
-						className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"
-						style={{
-							background:
-								"linear-gradient(180deg, var(--slate-800), var(--slate-900)",
-						}}
-						key={item.name}
+						className="w-[278px] max-w-full relative rounded-2xl  flex-shrink-0"
+						key={item.id}
 					>
-						<blockquote>
-							<div
-								aria-hidden="true"
-								className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-							></div>
-							<span className=" relative z-20 text-sm leading-[1.6] text-gray-100 font-normal">
-								{item.quote}
-							</span>
-							<div className="relative z-20 mt-6 flex flex-row items-center">
-								<span className="flex flex-col gap-1">
-									<span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-										{item.name}
-									</span>
-									<span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-										{item.title}
-									</span>
-								</span>
-							</div>
-						</blockquote>
+						<img
+							src={item.image}
+							alt={item.name}
+							className="w-full h-full object-cover rounded-2xl"
+						/>
+						<div className="absolute bottom-0 left-0 w-full h-1/2 rounded-2xl bg-gradient-to-t from-[#008080] to-transparent"></div>
+
+						<div className="absolute inset-0 bg-primary opacity-40 rounded-2xl transition-opacity duration-300 hover:opacity-0"></div>
+
+						<div className="absolute bottom-1 p-5">
+							<h4>{item.name}</h4>
+							<p className="text-sm mt-[-7px]">
+								{item.position} at
+								<br />
+								{item.company}
+							</p>
+						</div>
 					</li>
 				))}
 			</ul>
