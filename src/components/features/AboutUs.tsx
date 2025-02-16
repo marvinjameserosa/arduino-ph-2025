@@ -48,7 +48,7 @@ const AboutUs = () => {
     // Adjust Model Scale
     const adjustModelScale = () => {
       if (model) {
-        const scaleFactor = Math.min(window.innerWidth / 200, 2.5);
+        const scaleFactor = Math.min(window.innerWidth / 2.5, 2);
         model.scale.set(scaleFactor, scaleFactor, scaleFactor);
       }
     };
@@ -85,7 +85,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="container flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="container flex flex-col relative items-center justify-center min-h-screen p-4">
       <div className="text-center flex flex-col items-center gap-6">
         <h2 className="">
           What is{" "}
@@ -104,8 +104,14 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-
-      <div className="relative">
+      <div
+        className="relative"
+        style={{
+          backgroundImage: "url('/assets/arduino-gradient-background.png')",
+          backgroundSize: "110%",
+          backgroundPosition: "center",
+        }}
+      >
         <div ref={containerRef} className="relative"></div>
       </div>
     </div>
