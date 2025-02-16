@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -8,6 +8,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 const AboutUs = () => {
   const containerRef = useRef(null);
   const rendererRef = useRef(null);
+  const [model, setModel] = useState(null); // Store model reference
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -33,36 +34,16 @@ const AboutUs = () => {
 
     // Load Model
     const loader = new GLTFLoader();
-    let model;
     loader.load(
       "/models/scene.gltf",
       (gltf) => {
-        model = gltf.scene;
-        scene.add(model);
-        adjustModelScale();
+        const loadedModel = gltf.scene;
+        scene.add(loadedModel);
+        setModel(loadedModel);
       },
       undefined,
       (error) => console.error("Error loading GLTF:", error)
     );
-
-    // Adjust Model Scale
-    const adjustModelScale = () => {
-      if (model) {
-        const scaleFactor = Math.min(window.innerWidth / 2.5, 2);
-        model.scale.set(scaleFactor, scaleFactor, scaleFactor);
-      }
-    };
-
-    // Handle Resize
-    const handleResize = () => {
-      const width = 500;
-      const height = 500;
-      renderer.setSize(width, height);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      adjustModelScale();
-    };
-    window.addEventListener("resize", handleResize);
 
     // Animation Loop
     const animate = () => {
@@ -74,7 +55,6 @@ const AboutUs = () => {
 
     // Cleanup
     return () => {
-      window.removeEventListener("resize", handleResize);
       controls.dispose();
       renderer.dispose();
       scene.clear();
@@ -84,14 +64,39 @@ const AboutUs = () => {
     };
   }, []);
 
+  // Handle resizing dynamically
+  useEffect(() => {
+    const handleResize = () => {
+      let width = Math.min(window.innerWidth * 0.9, 800); // Use 90% of screen width but limit to 800px
+      if (window.innerWidth < 640) width = window.innerWidth * 0.95; // Adjust for smaller screens
+      const height = width;
+
+      if (rendererRef.current) {
+        rendererRef.current.setSize(width, height);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call it once on mount
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Adjust model scale dynamically
+  useEffect(() => {
+    if (!model) return;
+    const scaleFactor = Math.min(window.innerWidth / 2.5, 2);
+    model.scale.set(scaleFactor, scaleFactor, scaleFactor);
+  }, [model]);
+
   return (
-    <div className="container flex flex-col relative items-center justify-center min-h-screen p-4">
+    <div className="container flex flex-col relative items-center justify-center">
       <div className="text-center flex flex-col items-center gap-6">
         <h2 className="">
           What is{" "}
           <span className="text-secondary">Arduino Day Philippines?</span>
         </h2>
-        <div className="md:text-xl flex flex-col gap-2 ">
+        <div className="md:text-xl flex flex-col gap-2">
           <p>
             Arduino Day is a worldwide celebration of Arduino’s birthday,
             bringing people together to share their experiences and learn more
@@ -105,10 +110,10 @@ const AboutUs = () => {
         </div>
       </div>
       <div
-        className="relative"
+        className="relative -mt-[50px] sm:-mt-[150px]"
         style={{
           backgroundImage: "url('/assets/arduino-gradient-background.png')",
-          backgroundSize: "110%",
+          backgroundSize: "100%",
           backgroundPosition: "center",
         }}
       >
