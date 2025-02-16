@@ -37,19 +37,20 @@ export default function Agenda() {
     }));
 
     return (
-        <main className="container min-h-screen overflow-hidden">
+        <div className="relative">
             <div className="absolute inset-0 z-0">
                 <BackgroundGradients/>
             </div>
-
-            <div className="relative z-10 py-48 lg:px-20">
-                <div className="md:pb-20 space-y-3 pb-5">
-                    <h2 className="md:w-full">AGENDA</h2>
-                    <p className="w-[309px] md:text-xl text-white-100 font-montserrat font-light md:w-[269px] leading-6">See
-                        the Full Lineup of Talks, Workshop, and Activities!</p>
+            <div className="container min-h-screen overflow-hidden">
+                <div className="relative z-10 py-48 lg:px-20">
+                    <div className="md:pb-20 space-y-3 pb-5">
+                        <h2 className="md:w-full">AGENDA</h2>
+                        <p className="w-[309px] md:text-xl text-white-100 font-montserrat font-light md:w-[269px] leading-6">See
+                            the Full Lineup of Talks, Workshop, and Activities!</p>
+                    </div>
+                    <Timeline data={formattedTimelineData}/>
                 </div>
-                <Timeline data={formattedTimelineData}/>
             </div>
-        </main>
+        </div>
     );
 }

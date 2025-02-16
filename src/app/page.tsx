@@ -11,7 +11,7 @@ export default function Home() {
 			<Navbar />
 			<Location />
 			<Speakers />
-      <Agenda />
+      		<Agenda />
 			<Merch />
 			<Footer />
 		</div>
