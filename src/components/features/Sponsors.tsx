@@ -42,7 +42,7 @@ const sponsorsData: SponsorsData = sponsors;
 
 return (
     // Added a margin top to the div so it doesn't overlap with the speakers section, feel free to adjust the value
-    <div className="relative h-[1341px] bg-black text-white px-[22px] sm:px-[152px] mt-32">
+    <div className="relative h-[1341px] bg-black text-white px-[22px] sm:px-[122px] mt-32">
         {/* For Desktop */}
         <div className="max-w-6xl mx-auto lg:block hidden">
             {/* Header */}
