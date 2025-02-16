@@ -8,11 +8,11 @@
     ],
     "gold": [
       { "name": "PLDT Innolab", "logo": "/svgs/pldt.svg" },
+      { "name": "Anonimouse IT Solutions", "logo": "/svgs/anonimouse.svg" },
       { "name": "Alert", "logo": "/svgs/alert.svg" },
-      { "name": "Appkademiya", "logo": "/svgs/appkademiya-1.svg" },
-      { "name": "Electrogics", "logo": "/svgs/electrogics.svg" },
       { "name": "DICT Region IVA", "logo": "/svgs/dict.svg" },
-      { "name": "Anonimouse IT Solutions", "logo": "/svgs/anonimouse.svg" }
+      { "name": "Electrogics", "logo": "/svgs/electrogics.svg" },
+      { "name": "Appkademiya", "logo": "/svgs/appkademiya-1.svg" }
     ],
     "silver": [],
     "community": [
