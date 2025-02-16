@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Logo from "../../../public/assets/adph-logo.png";
 import Cover from "../../../public/assets/hero-section-cover.png";
+import CoverMobile from "../../../public/assets/hero-section-cover-mobile.png";
 
 export const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -30,20 +31,25 @@ export const Hero = () => {
 
   return (
     <div className="flex flex-col items-start justify-center gap-4 container">
-      {/* Header Logo */}
       <div className="flex items-center justify-center w-full">
         <div className="flex items-center justify-center relative min-h-80 w-full overflow-hidden">
-          <div className="absolute inset-0 z-[-1] rounded-sm">
+          {/* Desktop Cover Image */}
+          <div className="absolute inset-0 z-[-1] hidden sm:block">
+            <Image src={Cover} alt="Cover Image" layout="fill" quality={100} />
+          </div>
+
+          {/* Mobile Cover Image */}
+          <div className="absolute inset-0 z-[-1] block sm:hidden">
             <Image
-              src={Cover}
-              alt="Cover Image"
+              src={CoverMobile}
+              alt="Mobile Cover Image"
               layout="fill"
-              objectFit="cover"
               quality={100}
             />
           </div>
+
+          {/* Floating Logo */}
           <div
-            className=""
             style={{
               transform: `perspective(500px) rotateX(${tiltY}deg) rotateY(${tiltX}deg) translateX(${moveX}px) translateY(${moveY}px)`,
               transition: "transform 0.1s ease-out",
