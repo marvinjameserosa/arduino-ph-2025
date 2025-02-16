@@ -1,4 +1,5 @@
 import React from "react";
+import { sponsors } from "@/data/index";
 
 const Sponsors = () => {
   return (

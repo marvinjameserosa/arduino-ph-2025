@@ -1,2 +1,3 @@
 import speakers from "./speakers.json";
-export { speakers };
+import sponsors from "./sponsors.json";
+export { speakers, sponsors };
