@@ -50,28 +50,42 @@
 		@apply px-5 pt-20 md:max-w-md mx-auto;
 	}
 
-	.border-gradient-primary {
-		background:
-				linear-gradient(to bottom, #008080, #EE7402) border-box;
-		border: 2px solid transparent;
+	.border-gradient-primary::before {
+		content: "";
+		position: absolute;
+		inset: 0;
 		border-radius: 50%;
+		padding: 2px;
+		background: linear-gradient(to bottom, #008080, #EE7402);
+		-webkit-mask-composite: xor;
 		mask:
-				linear-gradient(#fff 0 0) padding-box,
+				linear-gradient(#fff 0 0) content-box,
 				linear-gradient(#fff 0 0) border-box;
 		mask-composite: exclude;
+		pointer-events: none;
 	}
 
-	.border-gradient-secondary {
-		background:
-				linear-gradient(to bottom, #EE7402, #008080) border-box;
-		border: 2px solid transparent;
+
+	.border-gradient-secondary::before {
+		content: "";
+		position: absolute;
+		inset: 0;
 		border-radius: 50%;
+		padding: 2px;
+		background: linear-gradient(to bottom, #EE7402, #008080);
+		-webkit-mask-composite: xor;
 		mask:
-				linear-gradient(#fff 0 0) padding-box,
+				linear-gradient(#fff 0 0) content-box,
 				linear-gradient(#fff 0 0) border-box;
 		mask-composite: exclude;
+		pointer-events: none;
 	}
 
+	.border-gradient-primary, .border-gradient-secondary {
+		position: relative;
+		background: black;
+		border-radius: 50%;
+	}
 }
 
 .blue-blur {
