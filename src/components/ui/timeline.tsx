@@ -42,12 +42,8 @@ export const Timeline = ({ data, header }: TimelineProps) => {
             ref={containerRef}
         >
             <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-                <h2 className="text-3xl md:text-5xl mb-4 text-white-50">
-                    {header.title}
-                </h2>
-                <p className="text-sm md:text-xl text-white-100 font-montserrat font-light md:w-[269px] leading-6 w-[247px]">
-                    {header.content}
-                </p>
+                {header.title}
+                {header.content}
             </div>
 
             <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
