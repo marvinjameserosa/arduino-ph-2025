@@ -1,3 +1,4 @@
+import Agenda from "@/components/features/Agenda";
 import Footer from "@/components/features/Footer";
 import Location from "@/components/features/Location";
 import Navbar from "@/components/features/Navbar";
@@ -10,6 +11,7 @@ export default function Home() {
 			<Navbar />
 			<Location />
 			<Speakers />
+      		<Agenda />
 			<Merch />
 			<Footer />
 		</div>
