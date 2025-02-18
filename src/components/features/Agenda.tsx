@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import {Timeline} from "../ui/timeline";
+import { Timeline } from "../ui/timeline";
 import timelineData from "@/data/timeline-data.json";
 import {BackgroundGradients} from "../ui/background-gradient";
-
 
 export default function Agenda() {
     const formattedTimelineData = timelineData.timelineEntries.map(entry => ({
@@ -37,19 +36,14 @@ export default function Agenda() {
     }));
 
     return (
-        <div className="relative">
+        <div className="relative z-10 lg:px-20">
+
             <div className="absolute inset-0 z-0">
                 <BackgroundGradients/>
             </div>
-            <div className="container min-h-screen overflow-hidden">
-                <div className="relative z-10 py-48 lg:px-20">
-                    <div className="md:pb-20 space-y-3 pb-5">
-                        <h2 className="md:w-full">AGENDA</h2>
-                        <p className="w-[309px] md:text-xl text-white-100 font-montserrat font-light md:w-[269px] leading-6">See
-                            the Full Lineup of Talks, Workshop, and Activities!</p>
-                    </div>
-                    <Timeline data={formattedTimelineData}/>
-                </div>
+
+            <div className="relative">
+                <Timeline data={formattedTimelineData}/>
             </div>
         </div>
     );
