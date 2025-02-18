@@ -82,7 +82,7 @@
 
 	.border-gradient-primary, .border-gradient-secondary {
 		position: relative;
-		background: black;
+		background: #131118;
 		border-radius: 50%;
 	}
 }
