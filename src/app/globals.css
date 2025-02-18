@@ -65,7 +65,6 @@
 		pointer-events: none;
 	}
 
-
 	.border-gradient-secondary::before {
 		content: "";
 		position: absolute;
