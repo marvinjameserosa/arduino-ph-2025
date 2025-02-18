@@ -36,7 +36,7 @@ export default function Agenda() {
     }));
 
     return (
-        <div className="relative z-10 lg:px-20">
+        <div className="relative z-10 lg:px-20 py-10">
 
             <div className="absolute inset-0 z-0">
                 <BackgroundGradients/>
