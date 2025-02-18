@@ -5,6 +5,21 @@ import timelineData from "@/data/timeline-data.json";
 import {BackgroundGradients} from "../ui/background-gradient";
 
 export default function Agenda() {
+
+    const headerData = {
+        title: (
+            <h2 className="text-3xl md:text-5xl mb-4 text-white-50">
+                {timelineData.timelineHeader.title}
+            </h2>
+        ),
+        content: (
+            <p className="text-sm md:text-xl text-white-100 font-montserrat font-light md:w-[269px] leading-6 w-[247px]">
+                {timelineData.timelineHeader.description}
+            </p>
+        )
+    };
+
+
     const formattedTimelineData = timelineData.timelineEntries.map(entry => ({
         title: (
             <div className="space-y-[9px] flex-1">
@@ -36,14 +51,17 @@ export default function Agenda() {
     }));
 
     return (
-        <div className="relative z-10 lg:px-20 py-10">
+        <div className="relative z-10 lg:px-20">
 
             <div className="absolute inset-0 z-0">
                 <BackgroundGradients/>
             </div>
 
             <div className="relative">
-                <Timeline data={formattedTimelineData}/>
+                <Timeline
+                    data={formattedTimelineData}
+                    header={headerData}
+                />
             </div>
         </div>
     );
