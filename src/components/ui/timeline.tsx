@@ -3,13 +3,20 @@ import {useScroll, useTransform, motion} from "framer-motion";
 import React, {useEffect, useRef, useState} from "react";
 import {Flag} from 'lucide-react';
 
+interface TimelineProps {
+    data: TimelineEntry[];
+    header: {
+        title: React.ReactNode;
+        content: React.ReactNode;
+    };
+}
 
 interface TimelineEntry {
     title: React.ReactNode;
     content: React.ReactNode;
 }
 
-export const Timeline = ({data}: { data: TimelineEntry[] }) => {
+export const Timeline = ({ data, header }: TimelineProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [height, setHeight] = useState(0);
@@ -34,12 +41,12 @@ export const Timeline = ({data}: { data: TimelineEntry[] }) => {
             className="w-full bg-white  font-sans md:px-10"
             ref={containerRef}
         >
-            <div className="max-w-7xl mx-auto pt-40 px-4 md:px-8 lg:px-10">
+            <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
                 <h2 className="text-3xl md:text-5xl mb-4 text-white-50">
-                    AGENDA
+                    {header.title}
                 </h2>
                 <p className="text-sm md:text-xl text-white-100 font-montserrat font-light md:w-[269px] leading-6 w-[247px]">
-                    See the Full Lineup of Talks, Workshop, and Activities!
+                    {header.content}
                 </p>
             </div>
 
