@@ -1,3 +1,4 @@
+import faqs from '../data/faqs.json';
 const speakers = [
 	{
 		id: 1,
@@ -72,3 +73,5 @@ const speakers = [
 ];
 
 export default speakers;
+
+export { faqs };

@@ -6,7 +6,7 @@ import speakers from "@/data/index";
 
 const Speakers = () => {
 	return (
-		<div className="relative">
+		<div className="container relative">
 			<LampContainer>
 				<h2>Featured Speakers</h2>
 			</LampContainer>
