@@ -3,7 +3,7 @@ import React from "react";
 import { LampContainer } from "../ui/lamp";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 import { speakers } from "@/data/index";
-import Heading from "./Heading";
+import Heading from "@/components/ui/heading";
 
 const Speakers = () => {
 	return (

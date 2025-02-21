@@ -47,7 +47,7 @@ const Heading = ({text, delay = 450, className}: HeadingProps) => {
               key={index} 
               className={cn(
                 'uppercase font-bold',
-                letter !== ' ' && index === currentChar && 'glow-text',
+                index === currentChar && 'glow-text',
                 className
               )}
             >
