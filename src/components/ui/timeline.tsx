@@ -3,13 +3,20 @@ import {useScroll, useTransform, motion} from "framer-motion";
 import React, {useEffect, useRef, useState} from "react";
 import {Flag} from 'lucide-react';
 
+interface TimelineProps {
+    data: TimelineEntry[];
+    header: {
+        title: React.ReactNode;
+        content: React.ReactNode;
+    };
+}
 
 interface TimelineEntry {
     title: React.ReactNode;
     content: React.ReactNode;
 }
 
-export const Timeline = ({data}: { data: TimelineEntry[] }) => {
+export const Timeline = ({ data, header }: TimelineProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [height, setHeight] = useState(0);
@@ -23,7 +30,7 @@ export const Timeline = ({data}: { data: TimelineEntry[] }) => {
 
     const {scrollYProgress} = useScroll({
         target: containerRef,
-        offset: ["start 10%", "end 50%"],
+        offset: ["start 10%", "end 25%"],
     });
 
     const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -34,13 +41,9 @@ export const Timeline = ({data}: { data: TimelineEntry[] }) => {
             className="w-full bg-white  font-sans md:px-10"
             ref={containerRef}
         >
-            <div className="max-w-7xl mx-auto pt-40 px-4 md:px-8 lg:px-10">
-                <h2 className="text-3xl md:text-5xl mb-4 text-white-50">
-                    AGENDA
-                </h2>
-                <p className="text-sm md:text-xl text-white-100 font-montserrat font-light md:w-[269px] leading-6 w-[247px]">
-                    See the Full Lineup of Talks, Workshop, and Activities!
-                </p>
+            <div className="max-w-7xl mx-auto pt-48 px-4 md:px-8 lg:px-10">
+                {header.title}
+                {header.content}
             </div>
 
             <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
@@ -62,7 +65,7 @@ export const Timeline = ({data}: { data: TimelineEntry[] }) => {
 
                                     {/*flag container*/}
                                     <div
-                                        className=" rounded-full absolute mt-[5px] ml-[1px] w-[25px] h-[25px] md:w-[57px] md:h-[57px] flex items-center justify-center ">
+                                        className="rounded-full absolute mt-[5px] ml-[1px] w-[25px] h-[25px] md:w-[57px] md:h-[57px] flex items-center justify-center ">
                                         <Flag
                                             className="w-[12px] h-[12px] stroke-[3px] md:h-[25px] md:w-[25px] z-10"/>
                                     </div>
