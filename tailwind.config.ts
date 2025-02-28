@@ -39,6 +39,7 @@ export default {
         "gradient-border-default": `linear-gradient(0deg, ${globalColors.primary} 0%, #66F7F7 63%, #FFFFFF 100%)`,
         "gradient-border-active": `linear-gradient(0deg, #F8F7FC 0%, ${globalColors.accent} 100%)`,
         "gradient-border-transparent": "linear-gradient(180deg, #D6EAEA 24%, #1A1A1C 100%)",
+        "gradient-cta": `linear-gradient(90deg, #F8F7FC 0%, #008B9C 35.5%, #EE7402 68.5%, #F8F7FC 100%)`,
       },
       fontSize: {
         xs: ["11.1px", { letterSpacing: "0.005em" }],

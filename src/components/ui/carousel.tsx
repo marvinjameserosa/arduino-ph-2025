@@ -86,7 +86,6 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
           })}
         </div>
       </div>
-
       {items.length > 1 && (
         <div className="absolute inset-0 flex items-center justify-between">
           <button
