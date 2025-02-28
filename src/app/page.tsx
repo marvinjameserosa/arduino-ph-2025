@@ -1,3 +1,4 @@
+import FAQs from "@/components/features/FAQs";
 import Agenda from "@/components/features/Agenda";
 import Footer from "@/components/features/Footer";
 import CtaBanner from "@/components/features/CtaBanner";
@@ -14,7 +15,8 @@ export default function Home() {
 			<Hero />
 			<Location />
 			<Speakers />
-      		<Agenda />
+			<FAQs />
+      <Agenda />
 			<Merch />
 			<CtaBanner />
 			<Footer />

@@ -7,6 +7,7 @@ import Heading from "@/components/ui/heading";
 
 const Speakers = () => {
 	return (
+
 		<section id="speakers" className="relative container">
 			<LampContainer>
 				<Heading text="Featured Speakers" />
