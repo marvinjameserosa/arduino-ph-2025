@@ -48,6 +48,7 @@
 
 	.container {
 		@apply px-5 pt-20 md:max-w-md mx-auto;
+
 	}
 
 	.border-gradient-primary::before {
