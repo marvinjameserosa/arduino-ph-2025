@@ -51,26 +51,25 @@
 	}
 }
 
-@layer components {
-	.glow-text {
-	  color: white;
-	  text-shadow: 0 0 0px white;
-	  animation: glow .5s ease-in-out;
-	}
-  
-	@keyframes glow {
-	0% {
-		text-shadow: 0 0 8px white;
-	  }
+.glow-text {
+	color: white;
+	position: relative;
+	text-shadow: 0px 0px 20px #F8F7FC;
+}
 
-	80% {
-		text-shadow: 0 0 6px white;
-	}
+.double-glow-text {
+    color: white;
+    position: relative;
+    animation: doubleGlow 1s ease-in-out 0.25s 2;
+}
 
-	100% {
-		text-shadow: 0 0 0px white;
-	}
-  }
+@keyframes doubleGlow {
+    0%, 100% {
+        text-shadow: 0 0 5px #F8F7FC;
+    }
+    50% {
+		text-shadow: 0px 0px 50px #F8F7FC;
+    }
 }
 
 .blue-blur {
