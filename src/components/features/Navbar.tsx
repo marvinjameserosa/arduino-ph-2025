@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import Image from "next/image";
@@ -15,6 +15,29 @@ export default function Navbar() {
 	const closeMenu = () => {
 		setIsMenuOpen(false);
 	};
+
+	// Smooth Scrolling Effect
+	useEffect(() => {
+		const handleHashChange = () => {
+			const { hash } = window.location;
+			if (hash) {
+				const targetElement = document.querySelector(hash);
+				if (targetElement) {
+					targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+				}
+			}
+		};
+
+		window.addEventListener("hashchange", handleHashChange, false);
+
+		if (window.location.hash) {
+			setTimeout(handleHashChange, 100);
+		}
+
+		return () => {
+			window.removeEventListener("hashchange", handleHashChange);
+		};
+	}, []);
 
 	return (
 		<header className="sticky top-0 z-50">
@@ -40,8 +63,6 @@ export default function Navbar() {
 							{[
 								{ href: "#about", label: "About Event" },
 								{ href: "#speakers", label: "Speakers" },
-								// { href: "#highlights", label: "Highlights" },
-								// { href: "#sponsor", label: "Sponsor" },
 								{ href: "#merch", label: "Merch" },
 								{ href: "#faqs", label: "FAQs" },
 							].map((item, index) => (
@@ -49,7 +70,18 @@ export default function Navbar() {
 									<Link
 										href={item.href}
 										className="block w-full text-center py-4 border-t border-b border-[#F8F7FC] border-opacity-5 md:border-none hover:text-primary duration-300"
-										onClick={closeMenu}
+										onClick={(e) => {
+											e.preventDefault();
+											closeMenu();
+											window.history.pushState(null, "", item.href);
+											const targetElement = document.querySelector(item.href);
+											if (targetElement) {
+												targetElement.scrollIntoView({
+													behavior: "smooth",
+													block: "start",
+												});
+											}
+										}}
 									>
 										{item.label}
 									</Link>
