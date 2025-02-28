@@ -14,12 +14,22 @@ export default function Home() {
 		<div>
 			<Navbar />
 			<Hero />
-			<AboutUs />
+			<section id="about">
+				<AboutUs />
+			</section>
 			<Location />
-			<Speakers />
-			<FAQs />
-			<Agenda />
-			<Merch />
+			<section id="speakers">
+				<Speakers />
+			</section>
+			<section id="agenda">
+				<Agenda />
+			</section>
+			<section id="merch">
+				<Merch />
+			</section>
+			<section id="faqs">
+				<FAQs />
+			</section>
 			<CtaBanner />
 			<Footer />
 		</div>

@@ -7,7 +7,7 @@ import Heading from "@/components/ui/heading";
 
 const Speakers = () => {
 	return (
-		<section id="speakers" className="relative container">
+		<div className="relative">
 			<LampContainer>
 				<Heading text="Featured Speakers" />
 			</LampContainer>
@@ -17,7 +17,7 @@ const Speakers = () => {
 				speed="normal"
 				className="max-w-full -mt-80 mb-32"
 			/>
-		</section>
+		</div>
 	);
 };
 

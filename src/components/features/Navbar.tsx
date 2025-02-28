@@ -40,8 +40,8 @@ export default function Navbar() {
 							{[
 								{ href: "#about", label: "About Event" },
 								{ href: "#speakers", label: "Speakers" },
-								{ href: "#highlights", label: "Highlights" },
-								{ href: "#sponsor", label: "Sponsor" },
+								// { href: "#highlights", label: "Highlights" },
+								// { href: "#sponsor", label: "Sponsor" },
 								{ href: "#merch", label: "Merch" },
 								{ href: "#faqs", label: "FAQs" },
 							].map((item, index) => (
