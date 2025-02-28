@@ -13,30 +13,26 @@ interface CarouselProps {
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [positions, setPositions] = useState(() => 
-    items.map((_, index) => ({
-      index,
-      position: index - 1 
-    }))
-  );
+
+  const getItemPosition = (index: number) => {
+    if (items.length <= 1) return 1;
+    
+    const prev = (currentIndex - 1 + items.length) % items.length;
+    const next = (currentIndex + 1) % items.length;
+
+    if (index === prev) return 0;
+    if (index === currentIndex) return 1;
+    if (index === next) return 2;
+    return -1; 
+  };
 
   const handleNext = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     const nextIndex = (currentIndex + 1) % items.length;
     setCurrentIndex(nextIndex);
-
-    setPositions(prev => {
-      const newPositions = prev.map(item => ({
-        ...item,
-        position: item.position - 1
-      }));
-      
-      return newPositions;
-    });
-
     onSlideChange?.(nextIndex);
   };
 
@@ -45,26 +41,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
     setIsAnimating(true);
     const prevIndex = (currentIndex - 1 + items.length) % items.length;
     setCurrentIndex(prevIndex);
-
-    setPositions(prev => {
-      const newPositions = prev.map(item => ({
-        ...item,
-        position: item.position + 1
-      }));
-      
-      return newPositions;
-    });
-
     onSlideChange?.(prevIndex);
-  };
-
-  const getItemStyles = (position: number) => {
-    if (position === 0) return 'z-20 scale-100 opacity-100 translate-x-0'; // Center
-    if (position === -1) return 'z-10 md:-translate-x-[75%] md:scale-75 opacity-70 hidden md:block'; // Left
-    if (position === 1) return 'z-10 md:translate-x-[75%] md:scale-75 opacity-70 hidden md:block'; // Right
-    if (position < -1) return 'z-0 -translate-x-[150%] scale-50 opacity-50 hidden md:block'; // Far left
-    if (position > 1) return 'z-0 translate-x-[150%] scale-50 opacity-50 hidden md:block'; // Far right
-    return 'opacity-0 scale-0'; // Hidden
   };
 
   useEffect(() => {
@@ -72,7 +49,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
       setIsAnimating(false);
     }, 300);
     return () => clearTimeout(timer);
-  }, [positions]);
+  }, [currentIndex]);
 
   return (
     <div className="relative w-full max-w-7xl mx-auto px-4 py-8">
@@ -83,46 +60,50 @@ export const Carousel: React.FC<CarouselProps> = ({ items, onSlideChange }) => {
           <div className='blue-blur h-[200px] w-[170px] absolute rounded-full -bottom-4 right-12 md:h-[260px] md:w-[230px] md:right-[35%] md:-bottom-8'></div>
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-        {positions.map(({ index, position }) => (
-    <div
-      key={index}
-      className={`absolute transition-all duration-500 ease-in-out
-        ${getItemStyles(position)}
-      `}
-      style={{
-        transitionProperty: 'all',
-        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
-      }}
-    >
-      <Image
-        src={items[index].src}
-        alt={items[index].alt}
-        width={500}
-        height={500}
-        className="w-[250px] h-[250px] md:w-[500px] md:h-[500px] object-contain transition-all duration-500"
-        priority
-      />
-    </div>
-  ))}
+          {items.map((item, index) => {
+            const position = getItemPosition(index);
+            if (position === -1) return null;
+
+            return (
+              <div
+                key={index}
+                className={`absolute transition-all duration-600 ease-in-out
+                  ${position === 0 ? 'md:-translate-x-[75%] md:scale-75 hidden md:block' : ''}
+                  ${position === 1 ? 'z-20 scale-100' : ''}
+                  ${position === 2 ? 'md:translate-x-[75%]  md:scale-75 hidden md:block' : ''}
+                `}
+              >
+                <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={500}
+                    height={500}
+                    className="w-[250px] h-[250px] md:w-[500px] md:h-[500px] object-contain"
+                    priority
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
-
-      <div className="absolute inset-0 flex items-center justify-between">
-        <button
-          onClick={handlePrev}
-          className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors ml-0 md:ml-4"
-          disabled={isAnimating}
-        >
-          <CircleChevronLeft className="w-8 h-8 md:w-12 md:h-12" />
-        </button>
-        <button
-          onClick={handleNext}
-          className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors mr-0 md:mr-4"
-          disabled={isAnimating}
-        >
-          <CircleChevronRight className="w-8 h-8 md:w-12 md:h-12" />
-        </button>
-      </div>
+      {items.length > 1 && (
+        <div className="absolute inset-0 flex items-center justify-between">
+          <button
+            onClick={handlePrev}
+            className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors ml-0 md:ml-4"
+            disabled={isAnimating}
+          >
+            <CircleChevronLeft className="w-8 h-8 md:w-12 md:h-12" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="p-1 md:p-2 rounded-full bg-white/80 shadow-lg hover:bg-white transition-colors mr-0 md:mr-4"
+            disabled={isAnimating}
+          >
+            <CircleChevronRight className="w-8 h-8 md:w-12 md:h-12" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
