@@ -1,4 +1,5 @@
 import Footer from "@/components/features/Footer";
+import CtaBanner from "@/components/features/CtaBanner";
 import Location from "@/components/features/Location";
 import Navbar from "@/components/features/Navbar";
 import Speakers from "@/components/features/Speakers";
@@ -12,6 +13,7 @@ export default function Home() {
 			<Speakers />
 			<Merch />
 			<Footer />
+			<CtaBanner />
 		</div>
 	);
 }
