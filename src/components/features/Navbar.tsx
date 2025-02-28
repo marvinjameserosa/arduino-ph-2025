@@ -25,6 +25,8 @@ export default function Navbar() {
 						<Image
 							src="/assets/logo.png"
 							alt="Logo"
+							width={50}
+							height={50}
 							className="w-auto h-10 object-cover"
 						/>
 					</Link>

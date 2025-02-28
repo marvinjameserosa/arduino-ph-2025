@@ -11,6 +11,8 @@ const Footer = () => {
 							<Image
 								src="/assets/logo.png"
 								alt="arduino day philippines logo"
+								width={50}
+								height={50}
 								className="block w-auto h-10 object-cover"
 							/>
 						</span>
