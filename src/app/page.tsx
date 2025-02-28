@@ -8,6 +8,7 @@ import Speakers from "@/components/features/Speakers";
 import Merch from "@/components/features/Merch";
 import { Hero } from "@/components/features/Hero";
 
+
 export default function Home() {
 	return (
 		<div>
@@ -15,9 +16,9 @@ export default function Home() {
 			<Hero />
 			<Location />
 			<Speakers />
-			<FAQs />
       <Agenda />
 			<Merch />
+      <FAQs />
 			<CtaBanner />
 			<Footer />
 		</div>
