@@ -21,7 +21,7 @@ export default function Navbar() {
         <div className="flex flex-wrap items-center justify-between container p-4 mx-auto lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img src="/assets/logo.png" alt="Logo" className="w-full h-10 object-cover" />
+            <img src="/assets/logo.png" alt="Logo" className="w-auto h-10 object-cover" />
           </Link>
 
           {/* Navigation Links */}

@@ -1,2 +1,5 @@
+import faqs from '../data/faqs.json';
 import speakers from "./speakers.json";
-export { speakers };
+import sponsors from "./sponsors.json";
+export { speakers, sponsors, faqs };
+
