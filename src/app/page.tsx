@@ -12,8 +12,8 @@ export default function Home() {
 			<Location />
 			<Speakers />
 			<Merch />
-			<Footer />
 			<CtaBanner />
+			<Footer />
 		</div>
 	);
 }
