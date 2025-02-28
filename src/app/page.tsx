@@ -7,19 +7,21 @@ import Navbar from "@/components/features/Navbar";
 import Speakers from "@/components/features/Speakers";
 import Merch from "@/components/features/Merch";
 import { Hero } from "@/components/features/Hero";
+import AboutUs from "@/components/features/AboutUs";
 
 export default function Home() {
-	return (
-		<div>
-			<Navbar />
-			<Hero />
-			<Location />
-			<Speakers />
-			<FAQs />
+  return (
+    <div>
+      <Navbar />
+      <Hero />
+      <AboutUs />
+      <Location />
+      <Speakers />
+      <FAQs />
       <Agenda />
-			<Merch />
-			<CtaBanner />
-			<Footer />
-		</div>
-	);
+      <Merch />
+      <CtaBanner />
+      <Footer />
+    </div>
+  );
 }
