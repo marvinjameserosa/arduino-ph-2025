@@ -8,8 +8,11 @@ import CoverMobile from "../../../public/assets/hero-section-cover-mobile.png";
 
 export const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true); // Ensure window-related calculations only run on the client
+
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
@@ -21,13 +24,18 @@ export const Hero = () => {
     };
   }, []);
 
-  const tiltX =
-    ((mousePosition.x - window.innerWidth / 2) / window.innerWidth) * 45;
-  const tiltY =
-    ((mousePosition.y - window.innerHeight / 2) / window.innerHeight) * -45;
+  // Prevent calculations if window is not available
+  const tiltX = isClient
+    ? ((mousePosition.x - window.innerWidth / 2) / window.innerWidth) * 45
+    : 0;
+  const tiltY = isClient
+    ? ((mousePosition.y - window.innerHeight / 2) / window.innerHeight) * -45
+    : 0;
 
-  const moveX = (mousePosition.x - window.innerWidth / 2) * 0.05;
-  const moveY = (mousePosition.y - window.innerHeight / 2) * 0.05;
+  const moveX = isClient ? (mousePosition.x - window.innerWidth / 2) * 0.05 : 0;
+  const moveY = isClient
+    ? (mousePosition.y - window.innerHeight / 2) * 0.05
+    : 0;
 
   return (
     <div
