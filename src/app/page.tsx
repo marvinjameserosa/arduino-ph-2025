@@ -18,9 +18,11 @@ export default function Home() {
 				<AboutUs />
 			</section>
 			<Location />
+			{/* 
 			<section id="speakers">
 				<Speakers />
 			</section>
+			*/}
 			<section id="agenda">
 				<Agenda />
 			</section>
