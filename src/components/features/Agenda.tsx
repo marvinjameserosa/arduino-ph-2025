@@ -39,8 +39,8 @@ export default function Agenda() {
                         <li key={index} className=" text-xs md:text-xl flex gap-3
                         md:leading-[23px] text-[19.3px] tracking-[0.005em] text-white font-montserrat
                         ">
-                            <span>•</span>
-                            <span>{detail}</span>
+                            {/*<span>•</span>
+                            <span>{detail}</span>*/}
                         </li>
                     ))}
                 </ul>

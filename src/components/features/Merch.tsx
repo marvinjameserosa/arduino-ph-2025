@@ -6,6 +6,7 @@ import light_blue_shirt from "../../../public/images/light_blue_shirt.svg"
 import white_shirt from "../../../public/images/white_shirt.svg"
 import { Button } from "../ui/button"
 import { Carousel } from "../ui/carousel"
+import Link from "next/link"
 
 interface Shirt {
     src: StaticImageData;
@@ -59,7 +60,9 @@ export default function Merch() {
                         </p>
                     </div>
                     <div className="flex justify-center mt-4">
+                        <Link href="https://forms.gle/kiugDJvcyiid3NAb7">
                         <Button className="py-4">BUY NOW</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -13,6 +13,7 @@ const Location = () => {
 				</p>
 			</div>
 			<div>
+				{/* 
 				<iframe
 					title="Polytechnic University of the Philippines Map"
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7722.040246631919!2d121.00543328697553!3d14.597929199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9dd976ededf%3A0xbaaa357c5585b8c2!2sPolytechnic%20University%20of%20the%20Philippines!5e0!3m2!1sen!2sph!4v1739105216952!5m2!1sen!2sph"
@@ -21,6 +22,7 @@ const Location = () => {
 					loading="lazy"
 					referrerPolicy="no-referrer-when-downgrade"
 				></iframe>
+				*/}
 				<noscript>
 					<p>
 						Google Maps is not available. Please enable JavaScript to view the
