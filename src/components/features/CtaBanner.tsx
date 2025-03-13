@@ -21,7 +21,7 @@ const CtaBanner = () => {
 				<div className="flex gap-4 items-center justify-center max-w-[80%]">
 					<IconMapPin className="w-8 h-10 text-secondary" />
 					<h4 className="uppercase text-[clamp(18px,2.5vw,51.99px)] text-center">
-						{/*PUP Gym, Polytechnic University of the Philippines Main Campus*/}
+						STI College Cubao
 					</h4>
 				</div>
 				<Heading
