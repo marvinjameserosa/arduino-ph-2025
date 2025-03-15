@@ -7,7 +7,7 @@
   "timelineEntries": [
     {
       "title": "Opening Remarks",
-      "time": "10:00 PM - 12:00 PM",
+      "time": "10:00 PM - 11:00 PM",
       "description": "Welcome Remarks & Keynote Speech",
       "details": [
         "Lorem ipsum dolor sit amet",
@@ -17,7 +17,7 @@
     },
     {
       "title": "Arduino Showcase",
-      "time": "10:00 PM - 12:00 PM",
+      "time": "11:00 PM - 12:00 PM",
       "description": "Demos of Innovative Arduino Projects",
       "details": [
         "Lorem ipsum dolor sit amet",
@@ -27,7 +27,7 @@
     },
     {
       "title": "Tech Talks & Panel Discussions",
-      "time": "10:00 PM - 12:00 PM",
+      "time": "12:00 PM - 1:00 PM",
       "description": "Industry Experts on IoT, AI, and Embedded Systems",
       "details": [
         "Lorem ipsum dolor sit amet",
@@ -37,7 +37,7 @@
     },
     {
       "title": "Tech Talks & Panel Discussions",
-      "time": "10:00 PM - 12:00 PM",
+      "time": "1:00 PM - 2:00 PM",
       "description": "Industry Experts on IoT, AI, and Embedded Systems",
       "details": [
         "Lorem ipsum dolor sit amet",
@@ -47,7 +47,7 @@
     },
     {
       "title": "Tech Talks & Panel Discussions",
-      "time": "10:00 PM - 12:00 PM",
+      "time": "2:00 PM - 3:00 PM",
       "description": "Industry Experts on IoT, AI, and Embedded Systems",
       "details": [
         "Lorem ipsum dolor sit amet",

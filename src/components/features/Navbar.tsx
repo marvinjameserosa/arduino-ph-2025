@@ -94,7 +94,7 @@ export default function Navbar() {
 									Be Part of the Movement! Join and Celebrate Innovation with
 									Us!
 								</p>
-								<Link href="/">
+								<Link href="https://arduinodayph.pwapilipinas.org/">
 									<Button className="w-full py-4">JOIN US</Button>
 								</Link>
 							</li>
@@ -103,7 +103,7 @@ export default function Navbar() {
 
 					{/* Button and Menu Toggle */}
 					<div className="flex space-x-3">
-						<Link href="/" className="hidden md:block">
+						<Link href="https://arduinodayph.pwapilipinas.org/" className="hidden md:block">
 							<Button className="px-8 py-4">JOIN US</Button>
 						</Link>
 

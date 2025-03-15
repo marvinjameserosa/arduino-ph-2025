@@ -1,11 +1,17 @@
 'use client'
 import { useState } from "react"
 import { StaticImageData } from "next/image"
-import blue_shirt from "../../../public/images/blue_shirt.svg"
-import light_blue_shirt from "../../../public/images/light_blue_shirt.svg"
-import white_shirt from "../../../public/images/white_shirt.svg"
+import White_Shirt_Logo from "../../../public/images/White_Shirt_Logo.png"
+import Black_Shirt_Logo from "../../../public/images/Black_Shirt_Logo.png"
+import White_Shirt_Logo_Date from "../../../public/images/White_Shirt_Logo_Date.png"
+import Black_Shirt_Logo_Date from "../../../public/images/Black_Shirt_Logo_Date.png"
+import Maker_Mug from "../../../public/images/Maker_Mug.png"
+import White_Tote_Bag from "../../../public/images/White_Tote_Bag.png"
+import Black_Tote_Bag from "../../../public/images/Black_Tote_Bag.png"
+import Bamboo_Pen from "../../../public/images/Bamboo_Pen.png"
 import { Button } from "../ui/button"
 import { Carousel } from "../ui/carousel"
+import Link from "next/link"
 
 interface Shirt {
     src: StaticImageData;
@@ -17,23 +23,54 @@ interface Shirt {
 export default function Merch() {
     const shirts: Shirt[] = [
         {
-            src: white_shirt,
-            alt: "white_shirt",
-            title: "WHITE Arduino T-Shirt",
-            price: "900.00"
+            src: White_Shirt_Logo,
+            alt: "White_Shirt_Logo",
+            title: "WHITE Arduino Innovator Tee",
+            price: "264.00"
         },
         {
-            src: blue_shirt,
-            alt: "blue_shirt",
-            title: "BLUE Arduino T-Shirt",
-            price: "900.00"
+            src: Black_Shirt_Logo,
+            alt: "Black_Shirt_Logo",
+            title: "BLACK Arduino Innovator Tee",
+            price: "264.00"
         },
         {
-            src: light_blue_shirt,
-            alt: "light_blue_shirt",
-            title: "Light Blue Arduino T-Shirt",
-            price: "900.00"
-        }
+            src: White_Shirt_Logo_Date,
+            alt: "White_Shirt_Logo_Date",
+            title: "WHITE Arduino Day 2025 Innovator Tee",
+            price: "264.00"
+        },
+        {
+            src: Black_Shirt_Logo_Date,
+            alt: "Black_Shirt_Logo_Date",
+            title: "BLACK Arduino Day 2025 Innovator Tee",
+            price: "264.00"
+        },
+        {
+            src: Maker_Mug,
+            alt: "Maker_Mug",
+            title: "Maker's Mug",
+            price: "85.00"
+        },
+        {
+            src: White_Tote_Bag,
+            alt: "White_Tote_Bag",
+            title: "WHITE Tech-Tote",
+            price: "159.50"
+        },
+        {
+            src: Black_Tote_Bag,
+            alt: "Black_Tote_Bag",
+            title: "BLACK Tech-Tote",
+            price: "159.50"
+        },
+        {
+            src: Bamboo_Pen,
+            alt: "Bamboo_Pen",
+            title: "Inko",
+            price: "40"
+        },
+        
     ];
 
     const [currentShirt, setCurrentShirt] = useState(0);
@@ -59,7 +96,9 @@ export default function Merch() {
                         </p>
                     </div>
                     <div className="flex justify-center mt-4">
+                        <Link href="https://forms.gle/kiugDJvcyiid3NAb7">
                         <Button className="py-4">BUY NOW</Button>
+                        </Link>
                     </div>
                 </div>
             </div>
