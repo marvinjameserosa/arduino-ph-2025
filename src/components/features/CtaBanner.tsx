@@ -2,6 +2,7 @@ import { IconMapPin } from "@tabler/icons-react";
 import React from "react";
 import { Button } from "../ui/button";
 import Heading from "../ui/heading";
+import Link from "next/link";
 
 const CtaBanner = () => {
 	return (
@@ -20,11 +21,11 @@ const CtaBanner = () => {
 				<div className="flex gap-4 items-center justify-center max-w-[80%]">
 					<IconMapPin className="w-8 h-10 text-secondary" />
 					<h4 className="uppercase text-[clamp(18px,2.5vw,51.99px)] text-center">
-						PUP Gym, Polytechnic University of the Philippines Main Campus
+						STI College Cubao
 					</h4>
 				</div>
 				<Heading
-					text="March 23, 2025"
+					text="March 22, 2025"
 					className="text-[clamp(100px,21.28vw,400px)] tracking-normal uppercase"
 					glowAll
 				/>
@@ -32,11 +33,13 @@ const CtaBanner = () => {
 					Be Part of the Movement! Join and Celebrate Innovation with Us!
 				</h2>
 			</div>
-			<Button className="py-3 px-6 lg:py-6 lg:px-12 bg-none">
-				<p className="text-xs font-medium lg:font-bold lg:text-xl uppercase">
-					Register Now
-				</p>
-			</Button>
+			<Link href="https://arduinodayph.pwapilipinas.org/">
+				<Button className="py-3 px-6 lg:py-6 lg:px-12 bg-none">
+					<p className="text-xs font-medium lg:font-bold lg:text-xl uppercase">
+						Register Now
+					</p>
+				</Button>
+			</Link>
 		</div>
 	);
 };
