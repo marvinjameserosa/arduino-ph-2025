@@ -87,8 +87,8 @@
     "name": "GDG On Campus - DLSU",
     "path_to_image": "/images/logos/GDG On Campus_Template.png",
     "radius": 0,
-    "width": 200,
-    "height": 200
+    "width": 120,
+    "height": 120
   },
   {
     "name": "GDG On Campus - Mapua Manila",
@@ -101,6 +101,13 @@
     "name": "IBITS",
     "path_to_image": "/images/logos/IBITS.png",
     "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "ICpEP SE PUP",
+    "path_to_image": "/images/logos/ICPEP_PUP.jpg",
+    "radius": 100,
     "width": 120,
     "height": 120
   },
