@@ -105,7 +105,7 @@ export const InfiniteMovingCards = ({
 						<div className="absolute bottom-1 p-5">
 							<h4>{item.name}</h4>
 							<p className="text-sm mt-[-7px]">
-								{item.position} at
+								{item.position}
 								<br />
 								{item.company}
 							</p>
