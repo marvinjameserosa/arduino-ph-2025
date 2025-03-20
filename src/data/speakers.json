@@ -1,72 +1,86 @@
 [
 	{
 		"id": 1,
-		"name": "Juan Dela Cruz",
-		"position": "Software Engineer",
-		"company": "Google Philippines",
-		"image": "/assets/speaker-2.png"
+		"name": "Clifford Co",
+		"position": "Circuit Sprint",
+		"company": "Drone development highlights and updates",
+		"image": "/assets/speakers/Clifford.png"
 	},
 	{
 		"id": 2,
-		"name": "Maria Santos",
-		"position": "Data Scientist",
-		"company": "Microsoft Philippines",
-		"image": "/assets/speaker-1.png"
+		"name": "Dennis Cesar Patino",
+		"position": "Main Resource Speaker",
+		"company": "Robotics Education for All",
+		"image": "/assets/speakers/Dennis.jpg"
 	},
 	{
 		"id": 3,
-		"name": "Carlos Mendoza",
-		"position": "DevOps Engineer",
-		"company": "Amazon Web Services PH",
-		"image": "/assets/speaker-3.png"
+		"name": "Morris Bana",
+		"position": "Main Resource Speaker",
+		"company": "Empowering Young Innovators",
+		"image": "/assets/speakers/Morris.JPG"
 	},
 	{
 		"id": 4,
-		"name": "Anna Reyes",
-		"position": "UI/UX Designer",
-		"company": "Canva Manila",
-		"image": "/assets/speaker-4.png"
+		"name": "Florante Sangrenes",
+		"position": "Main Resource Speaker",
+		"company": "Beyond C++",
+		"image": "/assets/speakers/Florante.png"
 	},
 	{
 		"id": 5,
-		"name": "Miguel Montaine",
-		"position": "Cybersecurity Analyst",
-		"company": "Trend Micro Philippines",
-		"image": "/assets/speaker-2.png"
+		"name": "Paolo Roberto Lozada",
+		"position": "Circuit Sprint",
+		"company": "Blockchain-Enabled IoT Speaker",
+		"image": "/assets/speakers/Paolo.jpg"
 	},
 	{
 		"id": 6,
-		"name": "Patricia Garcia",
-		"position": "Full Stack Developer",
-		"company": "Facebook Philippines",
-		"image": "/assets/speaker-5.png"
+		"name": "Mark Anthony Estopace",
+		"position": "Circuit Sprint",
+		"company": "Azure IoT Operations",
+		"image": "/assets/speakers/Mark.JPG"
 	},
 	{
 		"id": 7,
-		"name": "Emmanuel Cruz",
-		"position": "AI/ML Engineer",
-		"company": "Tesla AI Research",
-		"image": "/assets/speaker-3.png"
+		"name": "Angelica Anne Naguio",
+		"position": "Main Resource Speaker",
+		"company": "Crafting Your Dream Mechanical Keyboard with Arduino",
+		"image": "/assets/speakers/Angelica.png"
 	},
 	{
 		"id": 8,
-		"name": "Samantha Villanueva",
-		"position": "Cloud Solutions Architect",
-		"company": "IBM Philippines",
-		"image": "/assets/speaker-1.png"
+		"name": "Daniel Rein Cosare",
+		"position": "Circuit Sprint",
+		"company": "AWSCC PUP Mascot: Bluetooth controlled Alfdroid",
+		"image": "/assets/speakers/Daniel.jpg"
+	},
+	{
+		"id": 11,
+		"name": "Ryan Azur",
+		"position": "Main Resource Speaker",
+		"company": "From Sensor to Cloud: Arduino R4 Data Management with AWS & MongoDB",
+		"image": "/assets/speakers/Ryan.jpg"
 	},
 	{
 		"id": 9,
-		"name": "Daniella Fernandez",
-		"position": "Game Developer",
-		"company": "Ubisoft Philippines",
-		"image": "/assets/speaker-4.png"
+		"name": "Team ignite",
+		"position": "Circuit Sprint",
+		"company": "QuakePath: An Automated Earthquake Evacuation Assistant for Safe Zone Navigation",
+		"image": "/assets/speakers/Ignite.png"
+	},
+	{
+		"id": 12,
+		"name": "Christian Jay Mendoza",
+		"position": "Main Resource Speaker",
+		"company": "From Idea to Prototype",
+		"image": "/assets/speakers/Christian.png"
 	},
 	{
 		"id": 10,
-		"name": "Angela Dominguez",
-		"position": "Blockchain Developer",
-		"company": "Binance Philippines",
-		"image": "/assets/speaker-5.png"
+		"name": "Kristian Paolo David",
+		"position": "Main Resource Speaker",
+		"company": "Flux: Mixed Reality Arduino Lab",
+		"image": "/assets/speakers/Kristian.jpg"
 	}
 ]

@@ -91,6 +91,13 @@
     "height": 120
   },
   {
+    "name": "GDG On Campus - PUP",
+    "path_to_image": "/images/logos/gdg-pup-logo.png",
+    "radius": 20,
+    "width": 120,
+    "height": 120
+  },
+  {
     "name": "GDG On Campus - Mapua Manila",
     "path_to_image": "/images/logos/GDGoC Mapua Manila Logo.jpg",
     "radius": 100,
@@ -206,6 +213,13 @@
     "name": "MSC - PLM",
     "path_to_image": "/images/logos/MSC - PLM Logo.png",
     "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "MSC - PUP",
+    "path_to_image": "/images/logos/msc-pup-logo.png",
+    "radius": 20,
     "width": 120,
     "height": 120
   },

@@ -6,8 +6,8 @@
 
   "timelineEntries": [
     {
-      "title": "Opening Remarks",
-      "time": "10:00 PM - 11:00 PM",
+      "title": "Registration & Welcome Networking",
+      "time": "08:00 AM - 09:00 AM",
       "description": "Welcome Remarks & Keynote Speech",
       "details": [
         "Lorem ipsum dolor sit amet",
@@ -16,9 +16,9 @@
       ]
     },
     {
-      "title": "Arduino Showcase",
-      "time": "11:00 PM - 12:00 PM",
-      "description": "Demos of Innovative Arduino Projects",
+      "title": "Robotics Education for All",
+      "time": "09:00 AM - 09:50 am",
+      "description": "Empowering Philippine Schools for Beginning Robotics Education (featuring the Personal Robot Kit a.k.a Pepito)",
       "details": [
         "Lorem ipsum dolor sit amet",
         "Lorem ipsum dolor sit amet,",
@@ -26,9 +26,9 @@
       ]
     },
     {
-      "title": "Tech Talks & Panel Discussions",
-      "time": "12:00 PM - 1:00 PM",
-      "description": "Industry Experts on IoT, AI, and Embedded Systems",
+      "title": "YGG",
+      "time": "09:50 AM - 10:15 AM",
+      "description": "Arduino for Young Game Developers: A Hands-on Workshop on Game Development with Arduino and Unity",
       "details": [
         "Lorem ipsum dolor sit amet",
         "Lorem ipsum dolor sit amet,",
@@ -36,9 +36,9 @@
       ]
     },
     {
-      "title": "Tech Talks & Panel Discussions",
-      "time": "1:00 PM - 2:00 PM",
-      "description": "Industry Experts on IoT, AI, and Embedded Systems",
+      "title": "From Idea to Prototype",
+      "time": "10:15 AM - 10:40 AM",
+      "description": ": Basic Planning and Executing Projects",
       "details": [
         "Lorem ipsum dolor sit amet",
         "Lorem ipsum dolor sit amet,",
@@ -46,9 +46,109 @@
       ]
     },
     {
-      "title": "Tech Talks & Panel Discussions",
-      "time": "2:00 PM - 3:00 PM",
-      "description": "Industry Experts on IoT, AI, and Embedded Systems",
+      "title": "IOTLauncher",
+      "time": "10:40 AM - 11:05 AM",
+      "description": "Tech Talks with IOTLauncher",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "From Sensor to Cloud",
+      "time": "11:05 AM - 11:30 AM",
+      "description": "Arduino R4 Data Management with AWS & MongoDB",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "Flux",
+      "time": "11:30 AM - 11:50 AM",
+      "description": "Mixed Reality Arduino Lab",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "DEVCON",
+      "time": "1:00 PM - 1:25 PM",
+      "description": "All about DEVCON and its programs for the youth and professionals in the Philippines",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "Empowering Young Innovators",
+      "time": "1:25 PM - 1:50 PM",
+      "description": "Advancing 21st Century Skills with Arduino and AI in STREAM for Sustainable Solutions",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "Peonz",
+      "time": "1:50 PM - 2:15 PM",
+      "description": "Tech Talks with Peonz and the Arduino Community in the Philippines",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "Beyond C++",
+      "time": "2:15 PM - 2:40 PM",
+      "description": "Unleashing Arduino's Potential with Python and PyFirmata",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "Building Together",
+      "time": "2:40 PM - 3:05 PM",
+      "description": "The Value of Open Source Collaboration & Local Makerspaces Session",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "Hackathon Deliberation",
+      "time": "3:30 PM - 4:00 PM",
+      "description": "Judges and Finalization of Scores to the finalist",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "Awarding of Winners",
+      "time": "4:25 PM - 4:50 PM",
+      "description": "Announcement of Arduino PG 2025 Winners",
+      "details": [
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet,",
+        "Lorem ipsum dolor sit amet,"
+      ]
+    },
+    {
+      "title": "Closing Remarks & Raffle",
+      "time": "4:50 PM - 5:00 PM",
+      "description": "A rrap with raffle and gifts",
       "details": [
         "Lorem ipsum dolor sit amet",
         "Lorem ipsum dolor sit amet,",
