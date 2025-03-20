@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Link from 'next/link';
 
 const Footer = () => {
 	return (
@@ -137,6 +138,11 @@ const Footer = () => {
 								<a href="" className="hover:text-primary duration-300">
 									Sponsors
 								</a>
+							</li>
+							<li>
+								<Link href="/privacy-policy" className="hover:text-primary duration-300">
+									Privacy Policy
+								</Link>
 							</li>
 						</ul>
 					</div>
