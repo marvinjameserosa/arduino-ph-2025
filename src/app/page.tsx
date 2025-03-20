@@ -9,6 +9,7 @@ import Merch from "@/components/features/Merch";
 import { Hero } from "@/components/features/Hero";
 import AboutUs from "@/components/features/AboutUs";
 import Partners from "@/components/features/Partners";
+import AlertoHackathonAbout from "@/components/features/AlertoHackathon";
 
 export default function Home() {
 	return (
@@ -21,6 +22,9 @@ export default function Home() {
 			<Location />
 			<section id="speakers">
 				<Speakers />
+			</section>
+			<section id="alerto-hackathon">
+				<AlertoHackathonAbout />
 			</section>
 			<section id="agenda">
 				<Agenda />

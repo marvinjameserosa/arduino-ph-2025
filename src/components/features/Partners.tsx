@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { partners } from '@/data/index';
 import { sponsors } from '@/data/index'
 import GlowingTextOrange from '@/components/ui/glow-text-orange'
 
@@ -22,6 +23,21 @@ const Partners = () => {
     return size 
   }
 
+
+  type HeaderSeperator = {
+    title: string;
+  };
+  
+  const HeaderSeperator: React.FC<HeaderSeperator> = ({ title }) => {
+    return (
+      <div className="flex items-center justify-center my-8 px-4 sm:px-8 lg:px-16">
+        <div className="flex-grow border-t border-gray-500"></div>
+        <span className="mx-2 sm:mx-4 text-white text-base sm:text-lg">{title}</span>
+        <div className="flex-grow border-t border-gray-500"></div>
+      </div>
+    );
+  };
+
   return (
     <div className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -32,9 +48,58 @@ const Partners = () => {
           </GlowingTextOrange>
         </h1>
 
-        {/* Responsive grid for logos */}
+        <HeaderSeperator title="Sponsors" />
+        {/* for sponsors */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8">
           {sponsors.map((sponsor, index) => (
+            <div 
+              key={index}
+              className="relative flex justify-center items-center p-3 transition-transform duration-300 transform group hover:scale-105"
+            >
+              {/* Gradient border on hover */}
+              <div
+                className="
+                  absolute inset-0 rounded-2xl
+                  bg-gradient-to-b from-green-300 to-orange-500
+                  p-[2px]
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-300
+                  pointer-events-none
+                "
+              >
+                <div className="w-full h-full bg-[#0f0f0f] rounded-2xl" />
+              </div>
+
+    
+              <Image
+                src={sponsor.path_to_image}
+                alt={sponsor.name}
+                width={getAdjustedSize(sponsor.width)}
+                height={getAdjustedSize(sponsor.height)}
+                className={`z-10 object-contain ${
+                  sponsor.radius ? 'rounded-full' : ''
+                } group-hover:hidden transition-opacity duration-300`}
+              />
+
+      
+              <div
+                className={`
+                  z-10 hidden group-hover:flex 
+                  text-white text-xl font-semibold text-center 
+                  items-center justify-center
+                  font-morganite h-[${getAdjustedSize(sponsor.height)}px]
+                `}
+              >
+                {sponsor.name}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <HeaderSeperator title="Partners" />
+        {/* Responsive grid for logos  for partners*/}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8">
+          {partners.map((sponsor, index) => (
             <div 
               key={index}
               className="relative flex justify-center items-center p-3 transition-transform duration-300 transform group hover:scale-105"

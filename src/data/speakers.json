@@ -21,13 +21,6 @@
 		"image": "/assets/speakers/Morris.JPG"
 	},
 	{
-		"id": 4,
-		"name": "Florante Sangrenes",
-		"position": "Main Resource Speaker",
-		"company": "Beyond C++",
-		"image": "/assets/speakers/Florante.png"
-	},
-	{
 		"id": 5,
 		"name": "Paolo Roberto Lozada",
 		"position": "Circuit Sprint",
