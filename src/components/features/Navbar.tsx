@@ -16,28 +16,31 @@ export default function Navbar() {
 		setIsMenuOpen(false);
 	};
 
-	// Smooth Scrolling Effect
 	useEffect(() => {
 		const handleHashChange = () => {
-			const { hash } = window.location;
-			if (hash) {
-				const targetElement = document.querySelector(hash);
-				if (targetElement) {
-					targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-				}
+		  const { hash } = window.location;
+	  
+		  // Only call querySelector if the hash looks like "#some-id"
+		  if (hash && hash.startsWith("#") && !hash.includes("://")) {
+			const targetElement = document.querySelector(hash);
+			if (targetElement) {
+			  targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
 			}
+		  }
 		};
-
-		window.addEventListener("hashchange", handleHashChange, false);
-
+	  
+		window.addEventListener("hashchange", handleHashChange);
+	  
 		if (window.location.hash) {
-			setTimeout(handleHashChange, 100);
+		  setTimeout(handleHashChange, 100);
 		}
-
+	  
 		return () => {
-			window.removeEventListener("hashchange", handleHashChange);
+		  window.removeEventListener("hashchange", handleHashChange);
 		};
-	}, []);
+	  }, []);
+	  
+	  
 
 	return (
 		<header className="sticky top-0 z-50">
@@ -65,23 +68,29 @@ export default function Navbar() {
 								{ href: "#speakers", label: "Speakers" },
 								{ href: "#merch", label: "Merch" },
 								{ href: "#faqs", label: "FAQs" },
+								{ href: "https://frame.arduinodayphilippines.cc/", label: "Frame" },
 							].map((item, index) => (
 								<li key={index} className="w-full">
 									<Link
 										href={item.href}
 										className="block w-full text-center py-4 border-t border-b border-[#F8F7FC] border-opacity-5 md:border-none hover:text-primary duration-300"
 										onClick={(e) => {
-											e.preventDefault();
-											closeMenu();
-											window.history.pushState(null, "", item.href);
-											const targetElement = document.querySelector(item.href);
-											if (targetElement) {
+											// If the link starts with '#' then handle with smooth scrolling.
+											if (item.href.startsWith("#")) {
+											  e.preventDefault();
+											  closeMenu();
+											  window.history.pushState(null, "", item.href);
+											  const targetElement = document.querySelector(item.href);
+											  if (targetElement) {
 												targetElement.scrollIntoView({
-													behavior: "smooth",
-													block: "start",
+												  behavior: "smooth",
+												  block: "start",
 												});
+											  } else {
+												window.location.href = item.href;
+											  }
 											}
-										}}
+										  }}
 									>
 										{item.label}
 									</Link>

@@ -164,6 +164,11 @@ const Footer = () => {
 									Merch
 								</a>
 							</li>
+							<li>
+								<a href="https://frame.arduinodayphilippines.cc/" className="hover:text-primary duration-300">
+									Get a Frame
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>
